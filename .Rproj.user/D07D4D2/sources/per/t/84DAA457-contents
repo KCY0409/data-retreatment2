@@ -79,6 +79,35 @@ grep("[^02468]", x)
 # 5926개
 airportD2 <- c(airports$faa, airports$name, airports$lat , airports$lon, airports$alt, airports$tz, airports$dst, airports$tzone)
 View(airportD2)
-(grep("[[:digit:]]$",airportD2)
+grep("[[:digit:]]$",airportD2)
 997 + 4929
 
+# 앞에 글자가 없거나 하나
+# ?는 글자 뒤에 붙어서 그 글자가 한개 있거나 없는 경우 모두를 표현할 때 사용
+x <- c("apple", "banana", "pear", "aple")
+grep("app?", x)
+
+# 앞의 글자가 하나 이상
+# + 는 글자 뒤에 붙어서 그 글자가 한대 이상 연속하는 모두를 표현할 때 사용
+x <- c("apple", "banana", "pear", "aple")
+grep("p+", x)
+grep("ap+", x)
+
+# 앞의 긃자가 없거나 하나 이상
+# *는 글자 뒤에 붙어서 그 글자가 없는 경우부터 여러 개 연속하는 모두를 표현할 때 사용
+x <- c("apple", "banana", "pear", "aple", "abble", "appppppppppple")
+grep("app*", x)
+
+# 글자의 갯수를 조절하기
+# {n} : 글자가 n개인 경우
+# {n, } : 글자가 n개 이거나 더 많은 경우 
+# { ,m} : 글자가 m개 이거나 더 적은 경우
+# {n,m} : 글자가 n개에서 부터 m개 사이에 있는 경우
+
+# 정말 그렇게 동작할까?
+x <- c("a","aa","aaa","aaaa","aaaaa")
+grep("a{3}", x)
+grep("^a{3}$", x)
+grep("a{3,}", x)
+grep("a{,3}", x)
+grep("a{2,3}", x)
