@@ -88,6 +88,7 @@ grep("[^02468]", x)
 # 5926개
 airportD2 <- c(airports$faa, airports$name, airports$lat , airports$lon, airports$alt, airports$tz, airports$dst, airports$tzone)
 View(airportD2)
+
 grep("[[:digit:]]$",airportD2)
 997 + 4929
 
