@@ -22,15 +22,16 @@ x
 
 # 글자 반복해서 생성
 x <- c("abcdef", "ghifjk")
-str_dup(x, c(2, 3))
+str_dup(x, c(3, 3))
 
 # 공백문자 제거
 # 글자를 다루는데 가장 많이 쓴느 기능
 # 좌우의 공백문자를 제거
 x <- c("  a   ", "b   ",  "   c", "  c \n","\t   c  \n")
-str_trim(x)
+str_trim(x) # 좌우 공백
 
-str_trim(x, "left")
+str_trim(x, "left") # 좌
+str_trim(x, "right")# 우
 
 # 패딩
 # character vector의 length를 맞추기 위해 띄어쓰기를 추가
